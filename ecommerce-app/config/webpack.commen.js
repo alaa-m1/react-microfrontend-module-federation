@@ -1,8 +1,11 @@
 const path = require("path");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { ProvidePlugin } = require("webpack");
 
 module.exports = {
   entry: "./src/index.tsx",
+  devtool: "source-map",
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
     plugins: [
@@ -13,10 +16,6 @@ module.exports = {
         mainFields: ["browser", "main"],
       }),
     ],
-  },
-  output: {
-    path: path.join(__dirname, "/dist"), // the bundle output path
-    filename: "bundle.js", // the name of the bundle
   },
   module: {
     rules: [
@@ -53,4 +52,13 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "public/index.html",
+    }),
+    new ProvidePlugin({
+      React: "react",
+      process: "process/browser",
+    }),
+  ],
 };

@@ -1,12 +1,10 @@
 const { merge } = require("webpack-merge");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const commenConfig = require("./webpack.commen");
-const { ProvidePlugin} =require('webpack');
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const packageJson = require("../package.json");
 
 const devConfig = {
-  cache: false,
   mode: "development",
-  devtool: "source-map",
   devServer: {
     port: 8001,
     historyApiFallback: {
@@ -14,12 +12,13 @@ const devConfig = {
     },
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: "public/index.html",
-    }),
-    new ProvidePlugin({
-      React: "react",
-      process: "process/browser",
+    new ModuleFederationPlugin({
+      name: "shopping",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./ShoppingIndex": "./src/bootstrap",
+      },
+      shared: packageJson.dependencies,
     }),
   ],
 };

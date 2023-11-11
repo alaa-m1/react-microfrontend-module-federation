@@ -18,8 +18,8 @@ const Home=()=>{
             Alaa Mohammad
           </Typography>
           <Typography>
-            Frontend Developer | React - JavaScript - TypeScript - Test Automation
-            - Next.js | Software Developer
+          Frontend Developer | React - JavaScript - TypeScript - Test Automation - React Native
+          - Next.js | Software Developer
           </Typography>
         </Box>
         <Box sx={{ display: "flex", justifyContent: "space-around" }}>

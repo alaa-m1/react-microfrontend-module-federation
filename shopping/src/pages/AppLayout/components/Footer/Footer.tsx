@@ -13,7 +13,7 @@ export const Footer = () => {
     >
       <Box>
         <Link to={"/"}>
-          <Typography>React with Webpack5</Typography>
+          <Typography>Ecommerce Microfrontend Applications</Typography>
         </Link>
       </Box>
       <Box sx={{ display: "flex" }}>

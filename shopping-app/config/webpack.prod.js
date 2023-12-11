@@ -11,7 +11,7 @@ const prodConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "shooping",
+      name: "shopping",
       filename: "remoteEntry.js",
       exposes: {
         "./ShoppingIndex": "./src/bootstrap",

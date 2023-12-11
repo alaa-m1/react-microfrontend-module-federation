@@ -15,7 +15,7 @@ const prodConfig = {
     new ModuleFederationPlugin({
       name: "ecommerce_app",
       remotes: {
-        shopping: `shopping@${domain}/shopping/remoteEntry.js`,
+        shopping: `shopping@${domain}/shopping/latest/remoteEntry.js`,
       },
       shared: packageJson.dependencies,
     }),

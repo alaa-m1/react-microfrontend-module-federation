@@ -7,6 +7,7 @@ const prodConfig = {
   mode: "production",
   output: {
     filename: "[name].[contenthash].js", // the name of the bundle
+    publicPath:"/shopping/latest/"
   },
   plugins: [
     new ModuleFederationPlugin({

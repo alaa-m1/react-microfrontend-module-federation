@@ -1,4 +1,4 @@
-name: deploy-ecommerce-app
+name: deploy-ecommerce-main-app
 
 # define events which will trigger the workflow
 on:  
@@ -6,12 +6,12 @@ on:
     branches:
       - master
     paths:
-      - "ecommerce-app/**"
+      - "ecommerce-main-app/**"
  
 #  define where to execute the commands
 defaults:
   run:
-    working-directory: ecommerce-app
+    working-directory: ecommerce-main-app
 
 
 jobs:

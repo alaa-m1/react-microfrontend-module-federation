@@ -11,3 +11,6 @@ Navigate to each subproject directory in the terminal and run the following comm
 Navigate to each subproject directory in the terminal and run the following command `npm start`
 
 The ContainerApp (ecommerce-app) will run on [http://localhost:8000](http://localhost:8000)
+
+## Production Link
+Production link (Amazon S3) : [https://d1vlcqrje3410t.cloudfront.net/](https://d1vlcqrje3410t.cloudfront.net/).

@@ -1,12 +1,11 @@
 {
-  "name": "ecommerce-app",
+  "name": "react-shared-lib",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "scripts": {
     "start": "webpack serve --config config/webpack.dev.js",
-    "build": "webpack --config config/webpack.prod.js",
-    "serve": "webpack serve --mode development"
+    "build": "webpack --config config/webpack.prod.js"
   },
   "keywords": [],
   "author": "",

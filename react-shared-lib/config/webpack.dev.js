@@ -4,23 +4,22 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const packageJson = require("../package.json");
 
 const devConfig = {
-  cache: false,
   mode: "development",
   devServer: {
-    port: 8000,
+    port: 8002,
     historyApiFallback: {
       index: "index.html",
     },
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "ecommerce_app",
-      remotes: {
-        shopping: "shopping@http://localhost:8001/remoteEntry.js",
-        reactSharedLib: "react_shared_lib@http://localhost:8002/remoteEntry.js",
+      name: "react_shared_lib",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./ReactSharedLibIndex": "./src/index",
       },
       shared: packageJson.dependencies,
-    }),                             
+    }),
   ],
 };
 

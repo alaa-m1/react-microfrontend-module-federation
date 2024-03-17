@@ -13,7 +13,7 @@ export const Footer = () => {
     >
       <Box>
         <Link to={"/"}>
-          <Typography>Ecommerce Microfrontend Applications</Typography>
+          <Typography>Microfrontend Applications</Typography>
         </Link>
       </Box>
       <Box sx={{ display: "flex" }}>

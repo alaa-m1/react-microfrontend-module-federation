@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import DevPhoto from "assets/images/Alaa.png";
+import DevPhotoSrc from "assets/images/Alaa.png";
 export const ProfilePhoto = () => {
   return (
     <MainContainer>
@@ -11,7 +11,7 @@ export const ProfilePhoto = () => {
         <BackgroundContainer3 />
         <BackgroundContainer4 />
       </ImageContainer>
-      <DevImage src={DevPhoto} alt="Alaa Mohammad" />
+      <DevImage src={DevPhotoSrc} alt="Alaa Mohammad" />
     </MainContainer>
   );
 };

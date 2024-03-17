@@ -1,7 +1,7 @@
 import { Box } from "@mui/system";
 import { useLocation } from "react-router-dom";
 import { StyledLink } from "shared";
-
+import imgSrc from "assets/images/host-remote-apps.png";
 const Home = () => {
   const { pathname } = useLocation();
   return (
@@ -23,6 +23,13 @@ const Home = () => {
         >
           Go to Auth page
         </StyledLink>
+      </Box>
+      <Box sx={{ display: "flex", justifyContent: "center", mt: "30px" }}>
+        <img
+          src={imgSrc}
+          alt="Host and Remote App"
+          style={{ width: "70%", boxShadow: "1px 1px 2px 2px #ccc" }}
+        />
       </Box>
     </Box>
   );

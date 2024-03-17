@@ -1,40 +1,31 @@
-import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import { ExternalLink } from "shared";
+import { useLocation } from "react-router-dom";
+import { StyledLink } from "shared";
 
-const Home=()=>{
-    return (
+const Home = () => {
+  const { pathname } = useLocation();
+  return (
     <Box m={2}>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            color: "#01579b",
-            mb: 3,
-          }}
+      <Box sx={{ "a>span": { color: "#00b" } }}>
+        <div>Navigate from Remote App</div>
+        <StyledLink
+          to={"collection"}
+          isactive={pathname === "/collection" ? "active" : "inActive"}
+          data-testid="AppLayout-link-signout"
         >
-          <Typography fontSize="16px">
-            Alaa Mohammad
-          </Typography>
-          <Typography>
-          Frontend Developer | React - JavaScript - TypeScript - Test Automation - React Native
-          - Next.js | Software Developer
-          </Typography>
-        </Box>
-        <Box sx={{ display: "flex", justifyContent: "space-around" }}>
-          <ExternalLink
-            url="https://www.linkedin.com/in/alaa-mohammad-767622199/"
-            title="LinkedIn"
-          />
-          <ExternalLink
-            url="https://www.xing.com/profile/alaa_mohammad8/cv"
-            title="Xing"
-          />
-          <ExternalLink url="https://github.com/alaa-m1" title="GitHub" />
-        </Box>
+          Go to Collection page
+        </StyledLink>
+        <br />
+        <StyledLink
+          to={"auth"}
+          isactive={pathname === "/auth" ? "active" : "inActive"}
+          data-testid="AppLayout-link-signout"
+        >
+          Go to Auth page
+        </StyledLink>
       </Box>
-      )
-}
+    </Box>
+  );
+};
 
 export default Home;

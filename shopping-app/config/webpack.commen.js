@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ProvidePlugin } = require("webpack");
 
 module.exports = {
-  entry: "./src/index.tsx",
+  entry: "./src/index.ts",
   devtool: "source-map",
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
@@ -50,11 +50,12 @@ module.exports = {
           target: "es6",
         },
       },
+      
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "public/index.html",
+      template: "./src/index.html",
     }),
     new ProvidePlugin({
       React: "react",

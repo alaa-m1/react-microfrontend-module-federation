@@ -1,20 +1,16 @@
 import Shopping from "components/Shopping";
-import { ExternalLink } from "reactSharedLib/ReactSharedLibIndex";
+
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import { AppLayout } from "components/AppLayout";
 
 const App = () => {
-  console.log("StyledLink=", ExternalLink);
   return (
-    <>
-      Ecommerce App - Container App - <br />
-      {/* Example of the use of a shared component */}
-      <ExternalLink
-        url="https://www.linkedin.com/in/alaa-mohammad-767622199/"
-        title="LinkedIn"
-      />
-      <br />
-      <Shopping />
-    </>
+    <BrowserRouter>
+      <AppLayout>
+        <Shopping />
+      </AppLayout>
+    </BrowserRouter>
   );
 };
 

@@ -1,8 +1,9 @@
 import { Box } from "@mui/system";
-import { useLocation } from "react-router-dom";
+import { Location, useLocation } from "react-router-dom";
 import { StyledLink } from "shared";
 import imgSrc from "assets/images/host-remote-apps.png";
-const Home = () => {
+import { Button } from "@mui/material";
+const Home = ({ onNavigate }: { onNavigate?: (path: string) => void }) => {
   const { pathname } = useLocation();
   return (
     <Box m={2}>
@@ -16,13 +17,8 @@ const Home = () => {
           Go to Collection page
         </StyledLink>
         <br />
-        <StyledLink
-          to={"auth"}
-          isactive={pathname === "/auth" ? "active" : "inActive"}
-          data-testid="AppLayout-link-signout"
-        >
-          Go to Auth page
-        </StyledLink>
+
+        <Button onClick={() => onNavigate?.("/auth")}>Go to Auth page</Button>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center", mt: "30px" }}>
         <img

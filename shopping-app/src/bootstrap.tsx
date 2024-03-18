@@ -7,7 +7,7 @@ import { createBrowserHistory } from "history";
 const history = createBrowserHistory({ window });
 const mount = (
   el: HTMLElement,
-  { onNavigate }: { onNavigate?: () => void }
+  { onNavigate }: { onNavigate?: (path: string) => void }
 ) => {
   const root = ReactDOM.createRoot(el);
   root.render(

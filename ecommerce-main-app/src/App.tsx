@@ -1,15 +1,30 @@
-import Shopping from "components/Shopping";
-
-import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import React, { Suspense, lazy } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AppLayout } from "components/AppLayout";
+import NotFound from "pages/NotFound";
+import { LoadingSpinner } from "reactSharedLib/ReactSharedLibIndex";
+
+const Shopping = lazy(() => import("components/Shopping"));
 
 const App = () => {
   return (
     <BrowserRouter>
-      <AppLayout>
-        <Shopping />
-      </AppLayout>
+      <Routes>
+        <Route element={<AppLayout />}>
+          {["/", "/collection", "/about"].map((path) => (
+            <Route
+              key={path}
+              path={path}
+              element={
+                <Suspense fallback={<LoadingSpinner />}>
+                  <Shopping />
+                </Suspense>
+              }
+            />
+          ))}
+          <Route path="/*" element={<NotFound />} />
+        </Route>
+      </Routes>
     </BrowserRouter>
   );
 };

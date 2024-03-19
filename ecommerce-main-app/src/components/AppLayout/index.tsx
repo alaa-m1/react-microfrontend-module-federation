@@ -7,10 +7,8 @@ import logoSrc from "assets/images/phoenix.png";
 import React from "react";
 
 const currentUser = null;
-type AppLayoutProps = {
-  children: React.ReactNode;
-};
-export const AppLayout = ({ children }: AppLayoutProps) => {
+
+export const AppLayout = () => {
   const { pathname } = useLocation();
   return (
     <Box
@@ -71,7 +69,9 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
         </AppBar>
       </Box>
       <Box sx={{ flexGrow: 1 }}>
-        <main>{children}</main>
+        <main>
+          <Outlet />
+        </main>
       </Box>
       <Box sx={{ flexGrow: 0 }}>
         <Footer />

@@ -1,7 +1,9 @@
 import React from "react";
 import "./App.scss";
+import Auth from "./pages/Auth";
+
 const App = () => {
-  return <div>Auth App</div>;
+  return <Auth/>;
 };
 
 export default App;

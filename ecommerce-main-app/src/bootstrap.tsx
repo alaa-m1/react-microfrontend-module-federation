@@ -4,10 +4,10 @@ import App from "./App";
 import "./App.scss";
 
 const root = ReactDOM.createRoot(
-    document.getElementById("app-root") as HTMLElement
-  );
-  root.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>
-  );
+  document.getElementById("app-root") as HTMLElement
+);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);

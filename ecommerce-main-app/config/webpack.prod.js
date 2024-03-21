@@ -16,6 +16,7 @@ const prodConfig = {
       name: "ecommerce_app",
       remotes: {
         shopping: `shopping@${domain}/shopping/latest/remoteEntry.js`,
+        auth: `auth@${domain}/shopping/latest/remoteEntry.js`,
         reactSharedLib: `react_shared_lib@${domain}/react-shared-lib/latest/remoteEntry.js`,
       },
       shared: packageJson.dependencies,

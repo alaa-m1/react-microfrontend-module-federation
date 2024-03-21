@@ -5,6 +5,7 @@ import NotFound from "pages/NotFound";
 import { LoadingSpinner } from "reactSharedLib/ReactSharedLibIndex";
 
 const Shopping = lazy(() => import("components/Shopping"));
+const Auth = lazy(() => import("components/Auth"));
 
 const App = () => {
   return (
@@ -22,6 +23,14 @@ const App = () => {
               }
             />
           ))}
+          <Route
+            path="/auth"
+            element={
+              <Suspense fallback={<LoadingSpinner />}>
+                <Auth />
+              </Suspense>
+            }
+          />
           <Route path="/*" element={<NotFound />} />
         </Route>
       </Routes>

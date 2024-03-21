@@ -17,6 +17,7 @@ const devConfig = {
       name: "ecommerce_app",
       remotes: {
         shopping: "shopping@http://localhost:8001/remoteEntry.js",
+        auth: "auth@http://localhost:8003/remoteEntry.js",
         reactSharedLib: "react_shared_lib@http://localhost:8002/remoteEntry.js",
       },
       shared: packageJson.dependencies,
